@@ -10,15 +10,23 @@
 <body>
 
     <nav class="navbar">
-        <div class="nav-logo">A-Z - 9-3</div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#catalog">Snacks</a></li>
-            <li><a href="#footer">Contact</a></li>
-        </ul>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </nav>
+    <div class="nav-logo">A-Z - 9-3</div>
+    <ul class="nav-links" id="navLinks">
+        <li class="close-btn" onclick="toggleMenu()">×</li>
+        <li><a href="#hero" onclick="toggleMenu()">Home</a></li>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#catalog" onclick="toggleMenu()">Snacks</a></li>
+        <li><a href="#footer" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+    }
+</script>
 
     <section id="hero" class="hero">
         <div class="hero-container">
