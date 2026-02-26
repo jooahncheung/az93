@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A-Z - 9-3 Candy Shop</title>
+    <title>A-Z - 9-3 | Sweet Fix</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -13,8 +13,9 @@
         <div class="nav-logo">A-Z - 9-3</div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#catalog">Snacks</a></li>
-            <li><a href="#order">Order</a></li>
+            <li><a href="#footer">Contact</a></li>
         </ul>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
@@ -29,52 +30,49 @@
         </div>
     </section>
 
+    <section id="about" class="content-section">
+        <h2>About A-Z - 9-3</h2>
+        <p>Curating the finest selection of candies and snacks since 2026. We believe every craving deserves a high-quality cure.</p>
+    </section>
+
     <section id="catalog" class="catalog-section">
-        <h2 class="section-title">Snack Menu</h2>
+        <h2 class="section-title">Snack Catalog</h2>
         
         <div class="category-wrapper">
             <details class="category-dropdown">
-                <summary>
-                    <span class="cat-icon">🍭</span> Candy & Gummies
-                </summary>
+                <summary><span class="cat-icon">🍭</span> Candy & Gummies</summary>
                 <div class="cat-content">
-                    <div class="snack-row"><span>Peelerz</span> <span>$2.75</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Peelerz</span> <span>$2.75 / pack</span> <a href="#order">Order</a></div>
                     <div class="snack-row"><span>Jolly Ranchers</span> <span>$1 (5pcs) / $3.75 (Bag)</span> <a href="#order">Order</a></div>
-                    <div class="snack-row"><span>Sour Straps</span> <span>$3.75</span> <a href="#order">Order</a></div>
-                    <div class="snack-row"><span>Sweet Shoppe</span> <span>$2.50</span> <a href="#order">Order</a></div>
-                    <div class="snack-row"><span>Mike-n-Ike</span> <span>$3.75</span> <a href="#order">Order</a></div>
-                    <div class="snack-row"><span>Sour Patch Mix Big</span> <span>$6.50</span> <a href="#order">Order</a></div>
-                    <div class="snack-row"><span>Push Pop</span> <span>$2.75</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Sour Straps</span> <span>$3.75 / pack</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Sweet Shoppe</span> <span>$2.50 / pack</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Mike-n-Ike</span> <span>$3.75 / box</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Sour Patch Mix Big</span> <span>$6.50 / bag</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Push Pop</span> <span>$2.75 / pop</span> <a href="#order">Order</a></div>
                 </div>
             </details>
 
             <details class="category-dropdown">
-                <summary>
-                    <span class="cat-icon">🍬</span> Gum Selection
-                </summary>
+                <summary><span class="cat-icon">🍬</span> Gum</summary>
                 <div class="cat-content">
-                    <div class="snack-row"><span>Gum (Standard)</span> <span>$2.75</span> <a href="#order">Order</a></div>
-                    <div class="snack-row"><span>Big Gum</span> <span>$5.00</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Gum</span> <span>$2.75 / pack</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Big Gum</span> <span>$5.00 / pack</span> <a href="#order">Order</a></div>
                 </div>
             </details>
 
             <details class="category-dropdown">
-                <summary>
-                    <span class="cat-icon">🍫</span> Chocolate & Chips
-                </summary>
+                <summary><span class="cat-icon">🍫</span> Chocolate & Chips</summary>
                 <div class="cat-content">
-                    <div class="snack-row"><span>Chocolate Bar</span> <span>$1.80</span> <a href="#order">Order</a></div>
-                    <div class="snack-row"><span>Mini Chips</span> <span>$1.50</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Chocolate Bar</span> <span>$1.80 / bar</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Mini Chips</span> <span>$1.50 / bag</span> <a href="#order">Order</a></div>
                 </div>
             </details>
 
             <details class="category-dropdown">
-                <summary>
-                    <span class="cat-icon">🥤</span> Drinks & Fun
-                </summary>
+                <summary><span class="cat-icon">🥤</span> Drinks & Novelty</summary>
                 <div class="cat-content">
-                    <div class="snack-row"><span>Mini Soda</span> <span>$1.00</span> <a href="#order">Order</a></div>
-                    <div class="snack-row"><span>Baby Bottles</span> <span>$2.75</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Mini Soda</span> <span>$1.00 / can</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Baby Bottles</span> <span>$2.75 / bottle</span> <a href="#order">Order</a></div>
                     <div class="snack-row"><span>Powder Bottles</span> <span>$0.50</span> <a href="#order">Order</a></div>
                 </div>
             </details>
@@ -82,7 +80,7 @@
     </section>
 
     <section id="order" class="order-section">
-        <a href="YOUR_GOOGLE_FORM_URL" class="form-btn">Click Here to Order via Google Form</a>
+        <a href="YOUR_GOOGLE_FORM_URL" target="_blank" class="form-btn">Open Google Order Form</a>
     </section>
 
     <footer id="footer">
