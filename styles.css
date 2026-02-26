@@ -2,98 +2,111 @@
     --bubble-blue: #70d6ff;
     --dark-blue: #003459;
     --highlight-pink: #ff70a6;
-    --bg-light: #f9fdff;
+    --bg-light: #f0faff;
+    --white-glass: rgba(255, 255, 255, 0.8);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Nunito', sans-serif; background-color: var(--bg-light); color: var(--dark-blue); scroll-behavior: smooth; }
+body { 
+    font-family: 'Nunito', sans-serif; 
+    background-color: var(--bg-light); 
+    color: var(--dark-blue); 
+    scroll-behavior: smooth; 
+}
 
-/* Navigation & Mobile Slideout */
+/* Navigation */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 1rem 5%; background: white; position: fixed; width: 100%; top: 0; z-index: 1000;
+    padding: 1rem 5%; background: var(--white-glass); backdrop-filter: blur(10px);
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    border-bottom: 2px solid rgba(112, 214, 255, 0.2);
 }
 .nav-logo { font-family: 'Fredoka One'; color: var(--bubble-blue); font-size: 1.8rem; }
 .nav-links { display: flex; list-style: none; gap: 30px; }
-.nav-links a { text-decoration: none; color: var(--dark-blue); font-weight: 900; transition: 0.3s; }
-.nav-links a:hover { color: var(--highlight-pink); }
+.nav-links a { text-decoration: none; color: var(--dark-blue); font-weight: 900; }
 
 .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; }
 
 @media (max-width: 768px) {
     .menu-toggle { display: block; }
     .nav-links {
-        position: fixed; right: -100%; top: 0; height: 100vh; width: 70%;
+        position: fixed; right: -100%; top: 0; height: 100vh; width: 75%;
         background: var(--bubble-blue); flex-direction: column; justify-content: center;
         align-items: center; transition: 0.4s ease-in-out;
     }
     .nav-links.active { right: 0; }
-    .nav-links a { color: white; font-size: 1.5rem; }
+    .nav-links a { color: white; font-size: 1.5rem; margin: 15px 0; }
 }
 
-/* Hero & Bubble Font */
-.hero { height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 5%; }
+/* Hero Section */
+.hero { 
+    height: 100vh; display: flex; align-items: center; justify-content: center; 
+    text-align: center; padding: 0 5%; 
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(112, 214, 255, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 112, 166, 0.2) 0%, transparent 40%),
+        linear-gradient(135deg, #e1f5fe 0%, #ffffff 100%);
+}
 
 .bubble-title {
     font-family: 'Fredoka One', cursive;
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-size: clamp(3.5rem, 12vw, 7rem);
     color: white;
-    /* This creates the thick "Sticker/Bubble" outline from your mockup */
     text-shadow: 
-        4px 4px 0 var(--bubble-blue),
-        -4px -4px 0 var(--bubble-blue),
-        4px -4px 0 var(--bubble-blue),
-        -4px 4px 0 var(--bubble-blue),
-        8px 8px 0 var(--highlight-pink);
-    letter-spacing: 4px;
-    margin-bottom: 20px;
+        3px 3px 0 var(--bubble-blue),
+        -3px -3px 0 var(--bubble-blue),
+        3px -3px 0 var(--bubble-blue),
+        -3px 3px 0 var(--bubble-blue),
+        8px 10px 0px var(--highlight-pink),
+        0 15px 30px rgba(0,0,0,0.1);
+    letter-spacing: 4px; margin-bottom: 25px;
+    animation: float 4s ease-in-out infinite;
 }
 
-/* Border Requests */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Fading Borders & Branding */
 .last-name-role {
     border-left: 6px solid var(--highlight-pink);
-    padding-left: 15px; margin-bottom: 15px; font-weight: 900;
+    padding-left: 15px; margin: 0 auto 15px auto; 
+    font-weight: 900; font-size: 1.5rem; width: fit-content;
 }
 .hero-description {
-    max-width: 600px; padding-top: 15px;
+    max-width: 600px; margin: 0 auto; padding-top: 15px; line-height: 1.6;
     border-top: 5px solid;
     border-image: linear-gradient(to right, transparent, var(--highlight-pink), transparent) 1;
 }
 
-/* Dropdown Catalog */
-.catalog-section { padding: 80px 10%; }
-.category-wrapper { max-width: 800px; margin: 0 auto; }
-
+/* Catalog Dropdowns */
+.catalog-section { padding: 80px 10%; background: #ffffff; }
+.category-wrapper { max-width: 850px; margin: 0 auto; }
 .category-dropdown {
-    background: white; margin-bottom: 15px; border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;
-    border: 2px solid #eefaff;
+    background: white; margin-bottom: 20px; border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(112, 214, 255, 0.15); border: 2px solid #f0faff;
 }
 summary {
-    padding: 20px; font-weight: 900; font-size: 1.2rem; cursor: pointer;
-    list-style: none; display: flex; align-items: center; gap: 10px;
-    background: white; transition: 0.3s;
+    padding: 22px; font-weight: 900; font-size: 1.3rem; cursor: pointer;
+    list-style: none; display: flex; align-items: center; gap: 15px;
 }
-summary:hover { background: var(--soft-blue); color: var(--highlight-pink); }
-.cat-icon { font-size: 1.5rem; }
-
-.cat-content { padding: 10px 20px 20px; background: #fff; border-top: 1px solid #f0f0f0; }
-
 .snack-row {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 12px 0; border-bottom: 1px dashed #ddd;
+    padding: 15px 0; border-bottom: 1px dashed #e0f0f5;
 }
-.snack-row:last-child { border: none; }
 .snack-row a {
-    background: var(--highlight-pink); color: white; padding: 5px 15px;
-    border-radius: 20px; text-decoration: none; font-size: 0.8rem; font-weight: bold;
+    background: var(--highlight-pink); color: white; padding: 8px 18px;
+    border-radius: 50px; text-decoration: none; font-size: 0.8rem; font-weight: 900;
 }
 
-/* Footer */
-footer { text-align: center; padding: 40px; background: var(--dark-blue); color: white; }
+/* Order Button */
+.order-section { text-align: center; padding: 80px 0; }
 .form-btn {
-    display: inline-block; padding: 20px 40px; background: var(--highlight-pink);
-    color: white; text-decoration: none; border-radius: 50px; font-weight: 900;
-    font-size: 1.2rem; box-shadow: 0 5px 15px rgba(255, 112, 166, 0.4);
+    display: inline-block; padding: 22px 45px; background: var(--highlight-pink);
+    color: white; text-decoration: none; border-radius: 100px; font-weight: 900;
+    box-shadow: 0 8px 25px rgba(255, 112, 166, 0.4); transition: 0.3s;
 }
-.order-section { text-align: center; padding: 60px 0; }
+.form-btn:hover { transform: scale(1.05); }
+
+footer { text-align: center; padding: 50px; background: var(--dark-blue); color: white; }
