@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Z - 9-3 Candy Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">A-Z - 9-3</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#catalog">Snacks</a></li>
+            <li><a href="#order">Order</a></li>
+        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <h1 class="bubble-title">A-Z - 9-3</h1>
+            <div class="hero-branding">
+                <h2 class="last-name-role">The Sweet Spot</h2>
+                <p class="hero-description">From A to Z, we have your crave. Your daily sweet fix, delivered straight to your door with a burst of flavor.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="catalog-section">
+        <h2 class="section-title">Snack Menu</h2>
+        
+        <div class="category-wrapper">
+            <details class="category-dropdown">
+                <summary>
+                    <span class="cat-icon">🍭</span> Candy & Gummies
+                </summary>
+                <div class="cat-content">
+                    <div class="snack-row"><span>Peelerz</span> <span>$2.75</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Jolly Ranchers</span> <span>$1 (5pcs) / $3.75 (Bag)</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Sour Straps</span> <span>$3.75</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Sweet Shoppe</span> <span>$2.50</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Mike-n-Ike</span> <span>$3.75</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Sour Patch Mix Big</span> <span>$6.50</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Push Pop</span> <span>$2.75</span> <a href="#order">Order</a></div>
+                </div>
+            </details>
+
+            <details class="category-dropdown">
+                <summary>
+                    <span class="cat-icon">🍬</span> Gum Selection
+                </summary>
+                <div class="cat-content">
+                    <div class="snack-row"><span>Gum (Standard)</span> <span>$2.75</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Big Gum</span> <span>$5.00</span> <a href="#order">Order</a></div>
+                </div>
+            </details>
+
+            <details class="category-dropdown">
+                <summary>
+                    <span class="cat-icon">🍫</span> Chocolate & Chips
+                </summary>
+                <div class="cat-content">
+                    <div class="snack-row"><span>Chocolate Bar</span> <span>$1.80</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Mini Chips</span> <span>$1.50</span> <a href="#order">Order</a></div>
+                </div>
+            </details>
+
+            <details class="category-dropdown">
+                <summary>
+                    <span class="cat-icon">🥤</span> Drinks & Fun
+                </summary>
+                <div class="cat-content">
+                    <div class="snack-row"><span>Mini Soda</span> <span>$1.00</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Baby Bottles</span> <span>$2.75</span> <a href="#order">Order</a></div>
+                    <div class="snack-row"><span>Powder Bottles</span> <span>$0.50</span> <a href="#order">Order</a></div>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section id="order" class="order-section">
+        <a href="YOUR_GOOGLE_FORM_URL" class="form-btn">Click Here to Order via Google Form</a>
+    </section>
+
+    <footer id="footer">
+        <p>&copy; 2026 A-Z - 9-3 Candy Co. | All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
