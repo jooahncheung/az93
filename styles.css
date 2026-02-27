@@ -1,259 +1,344 @@
 :root {
-    --bubble-blue: #70d6ff;
-    --dark-blue: #003459;
-    --highlight-pink: #ff70a6;
-    --bg-light: #f0faff;
-    --white-glass: rgba(255, 255, 255, 0.85);
+  --bubble-blue: #70d6ff;
+  --dark-blue: #003459;
+  --highlight-pink: #ff70a6;
+  --bg-light: #f0faff;
+  --white-glass: rgba(255, 255, 255, 0.85);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-body { 
-    font-family: 'Nunito', sans-serif; 
-    background-color: var(--bg-light); 
-    color: var(--dark-blue); 
-    scroll-behavior: smooth; 
-    overflow-x: hidden;
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--dark-blue);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* --- Navigation & Mobile Slideout --- */
 .navbar {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    padding: 1rem 5%; 
-    background: var(--white-glass); 
-    backdrop-filter: blur(10px);
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
-    z-index: 1000;
-    border-bottom: 2px solid rgba(112, 214, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid rgba(112, 214, 255, 0.2);
 }
 
-.nav-logo { 
-    font-family: 'Fredoka One', cursive; 
-    color: var(--bubble-blue); 
-    font-size: 1.8rem; 
+.nav-logo {
+  font-family: "Fredoka One", cursive;
+  /* Keep your proportionate font size */
+  font-size: 1.8rem;
+  color: white; /* Changed to white so the blue/pink shadows pop like the hero */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+
+  /* Scaled down version of the hero bubble effect */
+  text-shadow:
+    1.5px 1.5px 0 var(--bubble-blue),
+    -1.5px -1.5px 0 var(--bubble-blue),
+    1.5px -1.5px 0 var(--bubble-blue),
+    -1.5px 1.5px 0 var(--bubble-blue),
+    3px 4px 0px var(--highlight-pink),
+    0 5px 10px rgba(0, 0, 0, 0.1);
+
+  /* Optional: small version of the float if you want it to match exactly, 
+     otherwise remove the animation line below */
+  animation: floatSmall 4s ease-in-out infinite;
 }
 
-.nav-links { 
-    display: flex; 
-    list-style: none; 
-    gap: 30px; 
-    align-items: center;
+/* A subtler float for the small navbar logo */
+@keyframes floatSmall {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
-.nav-links a { 
-    text-decoration: none; 
-    color: var(--dark-blue); 
-    font-weight: 900; 
-    transition: 0.3s;
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
 }
 
-.nav-links a:hover { color: var(--highlight-pink); }
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-weight: 900;
+  transition: 0.3s;
+}
 
-.menu-toggle { 
-    display: none; 
-    font-size: 1.8rem; 
-    cursor: pointer; 
-    color: var(--dark-blue);
+.nav-links a:hover {
+  color: var(--highlight-pink);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--dark-blue);
 }
 
 /* Close Button (Hidden on Desktop) */
-.close-btn { display: none; }
+.close-btn {
+  display: none;
+}
 
 @media (max-width: 768px) {
-    .menu-toggle { display: block; }
+  .menu-toggle {
+    display: block;
+  }
 
-    .nav-links {
-        position: fixed; 
-        right: -100%; 
-        top: 0; 
-        height: 100vh; 
-        width: 80%;
-        background: var(--bubble-blue); 
-        flex-direction: column; 
-        justify-content: center;
-        align-items: center; 
-        transition: 0.4s ease-in-out;
-        z-index: 1001;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-    }
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100vh;
+    width: 80%;
+    background: var(--bubble-blue);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+    z-index: 1001;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  }
 
-    .nav-links.active { right: 0; }
+  .nav-links.active {
+    right: 0;
+  }
 
-    .nav-links a { 
-        color: white; 
-        font-size: 1.8rem; 
-        margin: 20px 0; 
-    }
+  .nav-links a {
+    color: white;
+    font-size: 1.8rem;
+    margin: 20px 0;
+  }
 
-    .close-btn {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        font-size: 3rem;
-        color: white;
-        cursor: pointer;
-        font-weight: bold;
-    }
+  .close-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+  }
 }
 
 /* --- Hero Section --- */
-.hero { 
-    height: 100vh; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
-    padding: 0 5%; 
-    background: 
-        radial-gradient(circle at 15% 25%, rgba(112, 214, 255, 0.25) 0%, transparent 45%),
-        radial-gradient(circle at 85% 75%, rgba(255, 112, 166, 0.25) 0%, transparent 45%),
-        linear-gradient(135deg, #e1f5fe 0%, #ffffff 100%);
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 5%;
+  background:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(112, 214, 255, 0.25) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(255, 112, 166, 0.25) 0%,
+      transparent 45%
+    ),
+    linear-gradient(135deg, #e1f5fe 0%, #ffffff 100%);
 }
 
 .bubble-title {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(3.5rem, 12vw, 7rem);
-    color: white;
-    text-shadow: 
-        3px 3px 0 var(--bubble-blue),
-        -3px -3px 0 var(--bubble-blue),
-        3px -3px 0 var(--bubble-blue),
-        -3px 3px 0 var(--bubble-blue),
-        8px 10px 0px var(--highlight-pink),
-        0 15px 30px rgba(0,0,0,0.1);
-    letter-spacing: 4px; 
-    margin-bottom: 25px;
-    animation: float 4s ease-in-out infinite;
-    display: inline-block;
+  font-family: "Fredoka One", cursive;
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  color: white;
+  text-shadow:
+    3px 3px 0 var(--bubble-blue),
+    -3px -3px 0 var(--bubble-blue),
+    3px -3px 0 var(--bubble-blue),
+    -3px 3px 0 var(--bubble-blue),
+    8px 10px 0px var(--highlight-pink),
+    0 15px 30px rgba(0, 0, 0, 0.1);
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+  animation: float 4s ease-in-out infinite;
+  display: inline-block;
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 /* --- Branding Details --- */
 .last-name-role {
-    border-left: 6px solid var(--highlight-pink);
-    padding-left: 15px; 
-    margin: 0 auto 15px auto; 
-    font-weight: 900; 
-    font-size: 1.5rem; 
-    width: fit-content;
-    text-align: left;
+  border-left: 6px solid var(--highlight-pink);
+  padding-left: 15px;
+  margin: 0 auto 15px auto;
+  font-weight: 900;
+  font-size: 1.5rem;
+  width: fit-content;
+  text-align: left;
 }
 
 .hero-description {
-    max-width: 600px; 
-    margin: 0 auto; 
-    padding-top: 20px; 
-    line-height: 1.6;
-    border-top: 5px solid;
-    /* Fading Top Border Request */
-    border-image: linear-gradient(to right, transparent, var(--highlight-pink), transparent) 1;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 20px;
+  line-height: 1.6;
+  border-top: 5px solid;
+  /* Fading Top Border Request */
+  border-image: linear-gradient(
+      to right,
+      transparent,
+      var(--highlight-pink),
+      transparent
+    )
+    1;
 }
 
 /* --- Catalog Dropdowns --- */
-.catalog-section { 
-    padding: 100px 10%; 
-    background: #ffffff; 
+.catalog-section {
+  padding: 100px 10%;
+  background: #ffffff;
 }
 
-.category-wrapper { 
-    max-width: 850px; 
-    margin: 0 auto; 
+.category-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .category-dropdown {
-    background: white; 
-    margin-bottom: 20px; 
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(112, 214, 255, 0.12); 
-    border: 2px solid #f0faff;
-    overflow: hidden;
-    transition: 0.3s;
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(112, 214, 255, 0.12);
+  border: 2px solid #f0faff;
+  overflow: hidden;
+  transition: 0.3s;
 }
 
 .category-dropdown[open] {
-    border-color: var(--highlight-pink);
+  border-color: var(--highlight-pink);
 }
 
 summary {
-    padding: 22px; 
-    font-weight: 900; 
-    font-size: 1.3rem; 
-    cursor: pointer;
-    list-style: none; 
-    display: flex; 
-    align-items: center; 
-    gap: 15px;
-    outline: none;
+  padding: 22px;
+  font-weight: 900;
+  font-size: 1.3rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  outline: none;
 }
 
-summary:hover { background-color: #faffff; }
+summary:hover {
+  background-color: #faffff;
+}
 
-.cat-icon { font-size: 1.6rem; }
+.cat-icon {
+  font-size: 1.6rem;
+}
 
 .snack-row {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    padding: 15px 25px; 
-    border-bottom: 1px dashed #e0f0f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  border-bottom: 1px dashed #e0f0f5;
 }
 
-.snack-row:last-child { border-bottom: none; }
+.snack-row:last-child {
+  border-bottom: none;
+}
 
 .snack-row a {
-    background: var(--highlight-pink); 
-    color: white; 
-    padding: 8px 18px;
-    border-radius: 50px; 
-    text-decoration: none; 
-    font-size: 0.85rem; 
-    font-weight: 900;
-    transition: 0.3s;
+  background: var(--highlight-pink);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 900;
+  transition: 0.3s;
 }
 
 .snack-row a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(255, 112, 166, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 112, 166, 0.3);
 }
 
 /* --- Order Section & Footer --- */
-.order-section { 
-    text-align: center; 
-    padding: 100px 5%; 
-    background-color: var(--bg-light);
+.order-section {
+  text-align: center;
+  padding: 100px 5%;
+  background-color: var(--bg-light);
 }
 
 .form-btn {
-    display: inline-block; 
-    padding: 22px 50px; 
-    background: var(--highlight-pink);
-    color: white; 
-    text-decoration: none; 
-    border-radius: 100px; 
-    font-weight: 900;
-    font-size: 1.3rem;
-    box-shadow: 0 10px 25px rgba(255, 112, 166, 0.4); 
-    transition: 0.3s ease;
+  display: inline-block;
+  padding: 22px 50px;
+  background: var(--highlight-pink);
+  color: white;
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: 900;
+  font-size: 1.3rem;
+  box-shadow: 0 10px 25px rgba(255, 112, 166, 0.4);
+  transition: 0.3s ease;
 }
 
-.form-btn:hover { 
-    transform: translateY(-5px) scale(1.02); 
-    box-shadow: 0 15px 30px rgba(255, 112, 166, 0.5);
+.form-btn:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(255, 112, 166, 0.5);
 }
 
-footer { 
-    text-align: center; 
-    padding: 60px 5%; 
-    background: var(--dark-blue); 
-    color: white; 
-    font-weight: 700;
+footer {
+  text-align: center;
+  padding: 60px 5%;
+  background: var(--dark-blue);
+  color: white;
+  font-weight: 700;
+}
+.order-section {
+  padding: 80px 5%;
+  background-color: var(--bg-light);
+  text-align: center;
+}
+
+.form-container {
+  max-width: 850px; /* Matches your catalog width */
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 30px;
+  border: 3px solid var(--bubble-blue);
+  box-shadow: 0 15px 40px rgba(112, 214, 255, 0.2);
+  overflow: hidden; /* Keeps the rounded corners clean */
+}
+
+iframe {
+  border-radius: 15px;
 }
