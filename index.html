@@ -56,6 +56,28 @@
 
       <div class="category-wrapper">
         <details class="category-dropdown">
+          <summary><span class="cat-icon">⭐</span> Favourites</summary>
+          <div class="cat-content">
+            <div class="snack-row">
+              <span>Mini Soda</span> <span>$1.00 / can</span>
+              <a href="#order">Order</a>
+            </div>
+            <div class="snack-row">
+              <span>Sweet Shoppe</span> <span>$2.50 / pack</span>
+              <a href="#order">Order</a>
+            </div>
+            <div class="snack-row">
+              <span>Jolly Ranchers</span> <span>$1 (5pcs) / $3.75 (Bag)</span>
+              <a href="#order">Order</a>
+            </div>
+            <div class="snack-row">
+              <span>Peelerz</span> <span>$2.75 / pack</span>
+              <a href="#order">Order</a>
+            </div>
+          </div>
+        </details>
+
+        <details class="category-dropdown">
           <summary><span class="cat-icon">🍭</span> Candy & Gummies</summary>
           <div class="cat-content">
             <div class="snack-row">
@@ -154,12 +176,13 @@
               required
             />
           </div>
+          <!-- To set a order card to unavailible, add the class of "unavailible, and add the attribute of disabled"-->
 
           <div class="order-grid">
             <div class="order-card">
               <div class="item-info">
-                <span class="item-name">Peelerz</span
-                ><span class="item-price">$2.75</span>
+                <span class="item-name">Peelerz</span>
+                <span class="item-price">$2.75</span>
               </div>
               <input
                 type="number"
