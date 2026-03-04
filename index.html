@@ -138,19 +138,317 @@
     </section>
 
     <section id="order" class="order-section">
-      <h2 class="section-title">Place Your Order</h2>
+      <h2 class="section-title">Order Terminal</h2>
       <div class="form-container">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLScpvL6muJdt6jWdCYMRxclPwVOjp-932VCwDFsl-Ze8RY9-bw/viewform?embedded=true"
-          width="100%"
-          height="900"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
+        <form
+          id="candyOrderForm"
+          action="https://script.google.com/macros/s/AKfycbysNuqI1FJx1-eo7A6m6UyuDnlLh3kx3jQjkzPrAnNymDy96sJoEx8pFcjPYglxDAZyTQ/exec"
+          method="POST"
         >
-          Loading…
-        </iframe>
+          <div class="input-group">
+            <label>Customer Name & Class</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="e.g. John D | 7A"
+              required
+            />
+          </div>
+
+          <div class="order-grid">
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Peelerz</span
+                ><span class="item-price">$2.75</span>
+              </div>
+              <input
+                type="number"
+                name="Peelerz"
+                min="0"
+                value="0"
+                data-price="2.75"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Jolly Ranchers (5 pcs)</span
+                ><span class="item-price">$1.00</span>
+              </div>
+              <input
+                type="number"
+                name="Jolly_Ranchers_5pcs"
+                min="0"
+                value="0"
+                data-price="1.00"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Jolly Ranchers (Bag)</span
+                ><span class="item-price">$3.75</span>
+              </div>
+              <input
+                type="number"
+                name="Jolly_Ranchers_Bag"
+                min="0"
+                value="0"
+                data-price="3.75"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Gum Pack</span
+                ><span class="item-price">$2.75</span>
+              </div>
+              <input
+                type="number"
+                name="Gum_Pack"
+                min="0"
+                value="0"
+                data-price="2.75"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Big Gum</span
+                ><span class="item-price">$5.00</span>
+              </div>
+              <input
+                type="number"
+                name="Big_Gum"
+                min="0"
+                value="0"
+                data-price="5.00"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Mini Soda</span
+                ><span class="item-price">$1.00</span>
+              </div>
+              <input
+                type="number"
+                name="Mini_Soda"
+                min="0"
+                value="0"
+                data-price="1.00"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Chocolate Bar</span
+                ><span class="item-price">$1.80</span>
+              </div>
+              <input
+                type="number"
+                name="Chocolate_Bar"
+                min="0"
+                value="0"
+                data-price="1.80"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Mini Chips</span
+                ><span class="item-price">$1.50</span>
+              </div>
+              <input
+                type="number"
+                name="Mini_Chips"
+                min="0"
+                value="0"
+                data-price="1.50"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Push Pop</span
+                ><span class="item-price">$2.75</span>
+              </div>
+              <input
+                type="number"
+                name="Push_Pop"
+                min="0"
+                value="0"
+                data-price="2.75"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Sour Straps</span
+                ><span class="item-price">$3.75</span>
+              </div>
+              <input
+                type="number"
+                name="Sour_Straps"
+                min="0"
+                value="0"
+                data-price="3.75"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Sweet Shoppe</span
+                ><span class="item-price">$2.50</span>
+              </div>
+              <input
+                type="number"
+                name="Sweet_Shoppe"
+                min="0"
+                value="0"
+                data-price="2.50"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Mike-n-Ike</span
+                ><span class="item-price">$3.75</span>
+              </div>
+              <input
+                type="number"
+                name="Mike_n_Ike"
+                min="0"
+                value="0"
+                data-price="3.75"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Sour Patch Mix (Big)</span
+                ><span class="item-price">$6.50</span>
+              </div>
+              <input
+                type="number"
+                name="Sour_Patch_Big"
+                min="0"
+                value="0"
+                data-price="6.50"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Baby Bottle</span
+                ><span class="item-price">$2.75</span>
+              </div>
+              <input
+                type="number"
+                name="Baby_Bottle"
+                min="0"
+                value="0"
+                data-price="2.75"
+                class="qty-input"
+              />
+            </div>
+
+            <div class="order-card">
+              <div class="item-info">
+                <span class="item-name">Powder Bottle</span
+                ><span class="item-price">$0.50</span>
+              </div>
+              <input
+                type="number"
+                name="Powder_Bottle"
+                min="0"
+                value="0"
+                data-price="0.50"
+                class="qty-input"
+              />
+            </div>
+          </div>
+
+          <div class="total-display-box">
+            <span>Order Total:</span>
+            <span id="liveTotal">$0.00</span>
+          </div>
+
+          <input type="hidden" name="orderSummary" id="orderSummaryField" />
+          <input type="hidden" name="totalPrice" id="totalPriceField" />
+
+          <button type="submit" class="order-submit-btn" id="orderBtn">
+            Send Order 🚀
+          </button>
+        </form>
+
+        <div id="successPanel" style="display: none" class="success-wrap">
+          <div class="check-anim">🍭</div>
+          <h3>Sweet! Order Received.</h3>
+          <p>We'll notify you when it's ready for pickup.</p>
+          <button onclick="location.reload()" class="reset-btn">
+            Place Another Order
+          </button>
+        </div>
       </div>
+
+      <script>
+        const candyForm = document.getElementById("candyOrderForm");
+        const inputs = document.querySelectorAll(".qty-input");
+        const totalLabel = document.getElementById("liveTotal");
+
+        function calc() {
+          let total = 0;
+          let items = [];
+          inputs.forEach((i) => {
+            let q = parseInt(i.value);
+            if (q > 0) {
+              total += q * parseFloat(i.dataset.price);
+              items.push(`${q}x ${i.name.replace(/_/g, " ")}`);
+            }
+          });
+          totalLabel.innerText = `$${total.toFixed(2)}`;
+          document.getElementById("totalPriceField").value =
+            `$${total.toFixed(2)}`;
+          document.getElementById("orderSummaryField").value = items.join(", ");
+        }
+
+        inputs.forEach((i) => i.addEventListener("input", calc));
+
+        candyForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const btn = document.getElementById("orderBtn");
+          btn.innerText = "Processing Order...";
+          btn.disabled = true;
+
+          fetch(candyForm.action, {
+            method: "POST",
+            body: new FormData(candyForm),
+          })
+            .then(() => {
+              candyForm.style.display = "none";
+              document.getElementById("successPanel").style.display = "block";
+            })
+            .catch(() => {
+              alert("Check your connection and try again!");
+              btn.disabled = false;
+              btn.innerText = "Send Order 🚀";
+            });
+        });
+      </script>
     </section>
 
     <footer id="footer">
